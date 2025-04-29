@@ -10,33 +10,28 @@ public class Main {
         Veiculo kombi; // Declaração de váriavel do tipo Veiculo (Kombi não existe);
         double distanciaMaxima; // Informa a distância máxima que pode ser percorrida com o combustível
 
-        kombi = new Veiculo(); // Criação do objeto
+        fusca.setQtdPassageiros(10);
+        fusca.setConsumoQuilometrosPorLitro(25);
+        fusca.setCapacidadeCombustivel(50);
 
-        fusca.qtdPassageiros = 10;
-        fusca.consumoQuilometrosPorLitro = 25;
-        fusca.capacidadeCombustivel = 50;
-
-        kombi.qtdPassageiros = 10;
-        kombi.consumoQuilometrosPorLitro = 15;
-        kombi.capacidadeCombustivel = 50;
+        kombi = new Veiculo(10,
+                45,
+                15);
 
         System.out.println(fusca);
         System.out.println("+++++++++++");
-        System.out.println("Fusca: " + fusca.qtdPassageiros +
+        System.out.println("Fusca: " + fusca.getQtdPassageiros() +
                 " passageiros");
-        System.out.println("Kombi: " + kombi.consumoQuilometrosPorLitro +
+        System.out.println("Kombi: " + kombi.getConsumoQuilometrosPorLitro() +
                 " Km/L");
 
         System.out.println("----------");
         System.out.println("ping...");
         System.out.println(kombi.ping());
 
-        distanciaMaxima = fusca.capacidadeCombustivel * fusca.consumoQuilometrosPorLitro;
+        distanciaMaxima = fusca.alcanceVeiculo();
 
         System.out.println("O fusca ainda pode percorrer " +
                 distanciaMaxima + "KM.");
-
-
-
     }
 }
